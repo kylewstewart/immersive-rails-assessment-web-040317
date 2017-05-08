@@ -1,0 +1,15 @@
+<h1> Add Episode Appearance </h1>
+
+<h3> <%= @guest.name %> </h3>
+
+<%= form_tag ('/episode_guests') do %>
+<%= hidden_field_tag 'guest_id', @guest.id  %>
+<%= label_tag 'episode' %>
+<%= select_tag 'episode', options_from_collection_for_select(@episodes, 'number', 'number') %> <br>
+<%= label_tag 'rating' %>
+<%= text_field_tag 'rating' %>
+
+<%= submit_tag 'Save Episode' %>
+
+
+<% end %>
